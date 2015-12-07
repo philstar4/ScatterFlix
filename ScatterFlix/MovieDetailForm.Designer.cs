@@ -37,7 +37,7 @@
             this.lblSubgenres = new System.Windows.Forms.Label();
             this.lblRuntime = new System.Windows.Forms.Label();
             this.lblCast = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.imgMoviePoster = new System.Windows.Forms.PictureBox();
             this.btnWatchList = new System.Windows.Forms.Button();
             this.txtRuntime = new System.Windows.Forms.Label();
             this.txtSubgenres = new System.Windows.Forms.Label();
@@ -45,7 +45,7 @@
             this.txtYear = new System.Windows.Forms.Label();
             this.txtDirector = new System.Windows.Forms.Label();
             this.txtCast = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgMoviePoster)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMovieTitle
@@ -138,13 +138,14 @@
             this.lblCast.TabIndex = 8;
             this.lblCast.Text = "Cast:";
             // 
-            // pictureBox1
+            // imgMoviePoster
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(16, 64);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(176, 256);
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
+            this.imgMoviePoster.Location = new System.Drawing.Point(16, 64);
+            this.imgMoviePoster.Name = "imgMoviePoster";
+            this.imgMoviePoster.Size = new System.Drawing.Size(176, 256);
+            this.imgMoviePoster.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgMoviePoster.TabIndex = 9;
+            this.imgMoviePoster.TabStop = false;
             // 
             // btnWatchList
             // 
@@ -216,7 +217,7 @@
             this.txtCast.TabIndex = 16;
             this.txtCast.Text = "cast";
             // 
-            // MovieDetail
+            // MovieDetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -228,7 +229,7 @@
             this.Controls.Add(this.txtYear);
             this.Controls.Add(this.txtDirector);
             this.Controls.Add(this.btnWatchList);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.imgMoviePoster);
             this.Controls.Add(this.lblCast);
             this.Controls.Add(this.lblRuntime);
             this.Controls.Add(this.lblSubgenres);
@@ -238,9 +239,9 @@
             this.Controls.Add(this.lblYourRating);
             this.Controls.Add(this.lblOverallRating);
             this.Controls.Add(this.lblMovieTitle);
-            this.Name = "MovieDetail";
+            this.Name = "MovieDetailForm";
             this.Text = "MovieDetail";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgMoviePoster)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -257,7 +258,7 @@
         private System.Windows.Forms.Label lblSubgenres;
         private System.Windows.Forms.Label lblRuntime;
         private System.Windows.Forms.Label lblCast;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox imgMoviePoster;
         private System.Windows.Forms.Button btnWatchList;
         private System.Windows.Forms.Label txtRuntime;
         private System.Windows.Forms.Label txtSubgenres;
