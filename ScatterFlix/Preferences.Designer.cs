@@ -181,6 +181,7 @@ namespace ScatterFlix
             this.okButton.TabIndex = 13;
             this.okButton.Text = "OK";
             this.okButton.UseVisualStyleBackColor = true;
+            this.okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
             // cancelButton
             // 
@@ -192,11 +193,11 @@ namespace ScatterFlix
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
-            // Form1
+            // Preferences
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(443, 209);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.okButton);
@@ -215,7 +216,7 @@ namespace ScatterFlix
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "Preferences";
             this.Text = "Default Preferences";
             ((System.ComponentModel.ISupportInitialize)(this.ratingSlider)).EndInit();
             this.ResumeLayout(false);
