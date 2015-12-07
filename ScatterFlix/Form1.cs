@@ -16,5 +16,12 @@ namespace ScatterFlix
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string movieName = "Judge Dredd";
+            MovieDetailForm movieDetailForm = new MovieDetailForm(movieName);
+            movieDetailForm.ShowDialog();
+        }
     }
 }
