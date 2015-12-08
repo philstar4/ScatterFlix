@@ -17,6 +17,8 @@ namespace ScatterFlix
     public partial class MovieDetailForm : Form
     {
         string xmlFile = Path.Combine(System.Windows.Forms.Application.StartupPath, "movies.xml");
+        XmlDocument moviesXml;
+        XmlNode movieNode;
 
         public MovieDetailForm(string movieName)
         {
@@ -38,25 +40,32 @@ namespace ScatterFlix
         private void loadData(string movieName)
         {
             int count = 0;
-            XmlDocument doc = new XmlDocument();
-            doc.Load(xmlFile);
+            moviesXml = new XmlDocument();
+            moviesXml.Load(xmlFile);
 
-            XmlNode movieListNode = doc.SelectSingleNode("movielist");
+            XmlNode movieListNode = moviesXml.SelectSingleNode("movielist");
             XmlNodeList movieNodeList = movieListNode.SelectNodes("movie");
 
             foreach (XmlNode node in movieNodeList)
             {
                 if (node.SelectSingleNode("title").InnerText.Trim() == movieName)
                 {
+                    movieNode = node;
+
                     // Single node attributes
-                    lblMovieTitle.Text = node.SelectSingleNode("title").InnerText.Trim();
-                    txtDirector.Text = node.SelectSingleNode("director").InnerText.Trim();
-                    txtYear.Text = node.SelectSingleNode("year").InnerText.Trim();
-                    txtRuntime.Text = node.SelectSingleNode("length").InnerText.Trim();
+                    lblMovieTitle.Text = movieNode.SelectSingleNode("title").InnerText.Trim();
+                    txtDirector.Text = movieNode.SelectSingleNode("director").InnerText.Trim();
+                    txtYear.Text = movieNode.SelectSingleNode("year").InnerText.Trim();
+                    txtRuntime.Text = movieNode.SelectSingleNode("length").InnerText.Trim();
+                    tbOverallRating.Value = Convert.ToInt32(movieNode.SelectSingleNode("rating").InnerText.Trim());
+                    lblOverallRatingDetail.Text = movieNode.SelectSingleNode("rating").InnerText.Trim() + "/10";
+                    tbYourRating.Value = Convert.ToInt32(movieNode.SelectSingleNode("userrating").InnerText.Trim());
+                    lblYourRatingDetail.Text = movieNode.SelectSingleNode("userrating").InnerText.Trim() + "/10";
+                    btnWatchList.Text = setWatchListButtonText(Convert.ToBoolean(movieNode.SelectSingleNode("watchlist").InnerText.Trim()));
 
                     // Multi node attributes
                     txtSubgenres.Text = "";
-                    foreach (XmlNode genreNode in node.SelectNodes("genre"))
+                    foreach (XmlNode genreNode in movieNode.SelectNodes("genre"))
                     {
                         if (count == 0)
                         {
@@ -74,12 +83,42 @@ namespace ScatterFlix
                     txtSubgenres.Text = txtSubgenres.Text.Remove(txtSubgenres.Text.Length - 2);
 
                     txtCast.Text = "";
-                    foreach (XmlNode castNode in node.SelectNodes("actor"))
+                    foreach (XmlNode castNode in movieNode.SelectNodes("actor"))
                     {
                         txtCast.Text += castNode.InnerText.Trim() + '\n';
                     }
                 }
             }
+        }
+
+        private string setWatchListButtonText(bool onWatchList)
+        {
+            if (onWatchList)
+            {
+               return "Remove From Watch List";
+            }
+            else
+            {
+                return "Add To Watch List";
+            }
+        }
+
+        private void tbYourRating_Scroll(object sender, EventArgs e)
+        {
+            lblYourRatingDetail.Text = tbYourRating.Value + "/10";
+
+            movieNode.SelectSingleNode("userrating").InnerText = tbYourRating.Value.ToString();
+            moviesXml.Save(xmlFile);
+        }
+
+        private void btnWatchList_Click(object sender, EventArgs e)
+        {
+            bool onWatchList = Convert.ToBoolean(movieNode.SelectSingleNode("watchlist").InnerText);
+            onWatchList = !onWatchList;
+
+            btnWatchList.Text = setWatchListButtonText(onWatchList);
+            movieNode.SelectSingleNode("watchlist").InnerText = onWatchList.ToString();
+            moviesXml.Save(xmlFile);
         }
     }
 
