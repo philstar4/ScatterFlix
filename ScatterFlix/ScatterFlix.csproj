@@ -114,9 +114,6 @@
     <None Include="resources\movies.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="movies.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="prefs.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

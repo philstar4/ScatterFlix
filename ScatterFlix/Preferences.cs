@@ -150,5 +150,12 @@ namespace ScatterFlix
             doc.Element("preferences").Add(root);
             doc.Save(prefsXmlFile);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string movieName = "Judge Dredd";
+            MovieDetailForm movieDetailForm = new MovieDetailForm(movieName);
+            movieDetailForm.ShowDialog();
+        }
     }
 }
