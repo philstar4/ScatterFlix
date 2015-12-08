@@ -16,7 +16,7 @@ namespace ScatterFlix
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Preferences());
+            Application.Run(new Main());
         }
     }
 }

@@ -227,20 +227,20 @@ namespace ScatterFlix
         #endregion
 
         protected System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label titleLabel;
-        private System.Windows.Forms.TextBox titleBox;
-        private System.Windows.Forms.Label actorLabel;
-        private System.Windows.Forms.ComboBox actorBox;
-        private System.Windows.Forms.ComboBox directorBox;
-        private System.Windows.Forms.Label directorLabel;
-        private System.Windows.Forms.ComboBox yearBox;
-        private System.Windows.Forms.Label yearLabel;
-        private System.Windows.Forms.ComboBox genreBox;
-        private System.Windows.Forms.Label genreLabel;
-        private System.Windows.Forms.TrackBar ratingSlider;
-        private System.Windows.Forms.Label ratingLabel;
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Button cancelButton;
+        protected System.Windows.Forms.Button okButton;
+        protected System.Windows.Forms.Label titleLabel;
+        protected System.Windows.Forms.TextBox titleBox;
+        protected System.Windows.Forms.Label actorLabel;
+        protected System.Windows.Forms.ComboBox actorBox;
+        protected System.Windows.Forms.ComboBox directorBox;
+        protected System.Windows.Forms.Label directorLabel;
+        protected System.Windows.Forms.ComboBox yearBox;
+        protected System.Windows.Forms.Label yearLabel;
+        protected System.Windows.Forms.ComboBox genreBox;
+        protected System.Windows.Forms.Label genreLabel;
+        protected System.Windows.Forms.TrackBar ratingSlider;
+        protected System.Windows.Forms.Label ratingLabel;
+        protected System.Windows.Forms.Button cancelButton;
     }
 }
 

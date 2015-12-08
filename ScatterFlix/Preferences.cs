@@ -23,11 +23,6 @@ namespace ScatterFlix
             loadData();
         }
 
-        private void cancelButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void loadData()
         {
             loadFormOptions();
@@ -36,7 +31,7 @@ namespace ScatterFlix
 
         private void loadFormOptions()
         {
-            XDocument moviesXml = XDocument.Load(moviesXmlFile);
+            XDocument moviesXml = XDocument.Load("movies.xml");
 
             foreach (XElement table in moviesXml.Elements())
             {
@@ -78,7 +73,7 @@ namespace ScatterFlix
 
         private void loadCurrentPreferences()
         {
-            XDocument prefsXml = XDocument.Load(prefsXmlFile);
+            XDocument prefsXml = XDocument.Load("prefs.xml");
 
             foreach (XElement table in prefsXml.Elements())
             {
@@ -119,7 +114,12 @@ namespace ScatterFlix
             }
         }
 
-        private void okButton_Click(object sender, EventArgs e)
+        public virtual void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        public virtual void okButton_Click(object sender, EventArgs e)
         {
             deleteOriginalPreferences();
             addNewPreferences();
