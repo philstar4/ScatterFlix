@@ -46,85 +46,85 @@ namespace ScatterFlix
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(12, 362);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Size = new System.Drawing.Size(170, 25);
+            this.label1.Location = new System.Drawing.Point(18, 557);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Size = new System.Drawing.Size(245, 37);
             this.label1.Text = "Search Criteria";
             // 
             // okButton
             // 
-            this.okButton.Location = new System.Drawing.Point(670, 513);
-            this.okButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.okButton.Size = new System.Drawing.Size(10, 14);
+            this.okButton.Location = new System.Drawing.Point(1005, 789);
+            this.okButton.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.okButton.Size = new System.Drawing.Size(15, 22);
             this.okButton.Text = "Search";
             this.okButton.Visible = false;
             // 
             // titleLabel
             // 
-            this.titleLabel.Location = new System.Drawing.Point(14, 410);
-            this.titleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.titleLabel.Location = new System.Drawing.Point(21, 631);
+            this.titleLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             // 
             // titleBox
             // 
-            this.titleBox.Location = new System.Drawing.Point(73, 409);
-            this.titleBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.titleBox.Location = new System.Drawing.Point(110, 629);
+            this.titleBox.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             // 
             // actorLabel
             // 
-            this.actorLabel.Location = new System.Drawing.Point(14, 445);
-            this.actorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.actorLabel.Location = new System.Drawing.Point(21, 685);
+            this.actorLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             // 
             // actorBox
             // 
-            this.actorBox.Location = new System.Drawing.Point(73, 444);
-            this.actorBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.actorBox.Location = new System.Drawing.Point(110, 683);
+            this.actorBox.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             // 
             // directorBox
             // 
-            this.directorBox.Location = new System.Drawing.Point(73, 481);
-            this.directorBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.directorBox.Location = new System.Drawing.Point(110, 740);
+            this.directorBox.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             // 
             // directorLabel
             // 
-            this.directorLabel.Location = new System.Drawing.Point(14, 482);
-            this.directorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.directorLabel.Location = new System.Drawing.Point(21, 742);
+            this.directorLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             // 
             // yearBox
             // 
-            this.yearBox.Location = new System.Drawing.Point(336, 409);
-            this.yearBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.yearBox.Location = new System.Drawing.Point(504, 629);
+            this.yearBox.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             // 
             // yearLabel
             // 
-            this.yearLabel.Location = new System.Drawing.Point(286, 410);
-            this.yearLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.yearLabel.Location = new System.Drawing.Point(429, 631);
+            this.yearLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             // 
             // genreBox
             // 
-            this.genreBox.Location = new System.Drawing.Point(336, 444);
-            this.genreBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.genreBox.Location = new System.Drawing.Point(504, 683);
+            this.genreBox.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             // 
             // genreLabel
             // 
-            this.genreLabel.Location = new System.Drawing.Point(286, 446);
-            this.genreLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.genreLabel.Location = new System.Drawing.Point(429, 686);
+            this.genreLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             // 
             // ratingSlider
             // 
-            this.ratingSlider.Location = new System.Drawing.Point(336, 482);
-            this.ratingSlider.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ratingSlider.Location = new System.Drawing.Point(504, 742);
+            this.ratingSlider.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             // 
             // ratingLabel
             // 
-            this.ratingLabel.Location = new System.Drawing.Point(286, 482);
-            this.ratingLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.ratingLabel.Location = new System.Drawing.Point(429, 742);
+            this.ratingLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             // 
             // cancelButton
             // 
             this.cancelButton.BackColor = System.Drawing.Color.LightCoral;
-            this.cancelButton.Location = new System.Drawing.Point(471, 430);
-            this.cancelButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cancelButton.Size = new System.Drawing.Size(193, 40);
+            this.cancelButton.Location = new System.Drawing.Point(706, 662);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.cancelButton.Size = new System.Drawing.Size(290, 62);
             this.cancelButton.Text = "Reset";
             this.cancelButton.UseVisualStyleBackColor = false;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
@@ -132,9 +132,10 @@ namespace ScatterFlix
             // prefsButton
             // 
             this.prefsButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.prefsButton.Location = new System.Drawing.Point(471, 476);
+            this.prefsButton.Location = new System.Drawing.Point(706, 732);
+            this.prefsButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.prefsButton.Name = "prefsButton";
-            this.prefsButton.Size = new System.Drawing.Size(193, 40);
+            this.prefsButton.Size = new System.Drawing.Size(290, 62);
             this.prefsButton.TabIndex = 15;
             this.prefsButton.Text = "Default Preferences";
             this.prefsButton.UseVisualStyleBackColor = false;
@@ -143,9 +144,10 @@ namespace ScatterFlix
             // watchListCheckBox
             // 
             this.watchListCheckBox.AutoSize = true;
-            this.watchListCheckBox.Location = new System.Drawing.Point(188, 370);
+            this.watchListCheckBox.Location = new System.Drawing.Point(282, 569);
+            this.watchListCheckBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.watchListCheckBox.Name = "watchListCheckBox";
-            this.watchListCheckBox.Size = new System.Drawing.Size(77, 17);
+            this.watchListCheckBox.Size = new System.Drawing.Size(110, 24);
             this.watchListCheckBox.TabIndex = 18;
             this.watchListCheckBox.Text = "Watch List";
             this.watchListCheckBox.UseVisualStyleBackColor = true;
@@ -158,11 +160,12 @@ namespace ScatterFlix
             this.mainMoviesList.FullRowSelect = true;
             this.mainMoviesList.GridLines = true;
             this.mainMoviesList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.mainMoviesList.Location = new System.Drawing.Point(471, 13);
+            this.mainMoviesList.Location = new System.Drawing.Point(706, 20);
+            this.mainMoviesList.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.mainMoviesList.MultiSelect = false;
             this.mainMoviesList.Name = "mainMoviesList";
             this.mainMoviesList.ShowGroups = false;
-            this.mainMoviesList.Size = new System.Drawing.Size(193, 345);
+            this.mainMoviesList.Size = new System.Drawing.Size(288, 529);
             this.mainMoviesList.TabIndex = 19;
             this.mainMoviesList.UseCompatibleStateImageBehavior = false;
             this.mainMoviesList.View = System.Windows.Forms.View.Details;
@@ -177,9 +180,10 @@ namespace ScatterFlix
             // 
             this.searchButton.BackColor = System.Drawing.Color.GreenYellow;
             this.searchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchButton.Location = new System.Drawing.Point(471, 382);
+            this.searchButton.Location = new System.Drawing.Point(706, 588);
+            this.searchButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(193, 42);
+            this.searchButton.Size = new System.Drawing.Size(290, 65);
             this.searchButton.TabIndex = 20;
             this.searchButton.Text = "SEARCH!";
             this.searchButton.UseVisualStyleBackColor = false;
@@ -208,8 +212,7 @@ namespace ScatterFlix
             legend1.Enabled = false;
             legend1.Name = "Legend1";
             this.movieScatter.Legends.Add(legend1);
-            this.movieScatter.Location = new System.Drawing.Point(17, 13);
-            this.movieScatter.Margin = new System.Windows.Forms.Padding(2);
+            this.movieScatter.Location = new System.Drawing.Point(26, 20);
             this.movieScatter.Name = "movieScatter";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
@@ -217,21 +220,21 @@ namespace ScatterFlix
             series1.Legend = "Legend1";
             series1.Name = "movies";
             this.movieScatter.Series.Add(series1);
-            this.movieScatter.Size = new System.Drawing.Size(441, 344);
+            this.movieScatter.Size = new System.Drawing.Size(662, 529);
             this.movieScatter.TabIndex = 21;
             this.movieScatter.Text = "chart1";
-            this.movieScatter.MouseClick += new MouseEventHandler(this.mouseClickHandler);
+            this.movieScatter.MouseClick += new System.Windows.Forms.MouseEventHandler(this.mouseClickHandler);
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(689, 539);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.ClientSize = new System.Drawing.Size(1034, 829);
             this.Controls.Add(this.movieScatter);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.mainMoviesList);
             this.Controls.Add(this.watchListCheckBox);
             this.Controls.Add(this.prefsButton);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.Name = "Main";
             this.Text = "ScatterFlix";
             this.Controls.SetChildIndex(this.label1, 0);

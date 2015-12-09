@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
@@ -151,11 +152,13 @@ namespace ScatterFlix
             doc.Save(prefsXmlFile);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void yearBox_Validating(object sender, CancelEventArgs e)
         {
-            string movieName = "Judge Dredd";
-            MovieDetailForm movieDetailForm = new MovieDetailForm(movieName);
-            movieDetailForm.ShowDialog();
+            if (yearBox.Text.Trim().Length > 0 && (!Regex.IsMatch(yearBox.Text, @"^\d+$") || yearBox.Text.Length != 4))
+            {
+                e.Cancel = true;
+                MessageBox.Show("Year must be a four-digit numeric value. Please enter a new value.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

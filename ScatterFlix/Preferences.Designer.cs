@@ -54,9 +54,10 @@ namespace ScatterFlix
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(18, 14);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(221, 25);
+            this.label1.Size = new System.Drawing.Size(316, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "Default Preferences";
             // 
@@ -64,44 +65,49 @@ namespace ScatterFlix
             // 
             this.titleLabel.AutoSize = true;
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.Location = new System.Drawing.Point(14, 57);
+            this.titleLabel.Location = new System.Drawing.Point(21, 88);
+            this.titleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(33, 15);
+            this.titleLabel.Size = new System.Drawing.Size(50, 22);
             this.titleLabel.TabIndex = 1;
             this.titleLabel.Text = "Title:";
             // 
             // titleBox
             // 
-            this.titleBox.Location = new System.Drawing.Point(73, 56);
+            this.titleBox.Location = new System.Drawing.Point(110, 86);
+            this.titleBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.titleBox.Name = "titleBox";
-            this.titleBox.Size = new System.Drawing.Size(180, 20);
+            this.titleBox.Size = new System.Drawing.Size(268, 26);
             this.titleBox.TabIndex = 2;
             // 
             // actorLabel
             // 
             this.actorLabel.AutoSize = true;
             this.actorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.actorLabel.Location = new System.Drawing.Point(14, 92);
+            this.actorLabel.Location = new System.Drawing.Point(21, 142);
+            this.actorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.actorLabel.Name = "actorLabel";
-            this.actorLabel.Size = new System.Drawing.Size(37, 15);
+            this.actorLabel.Size = new System.Drawing.Size(57, 22);
             this.actorLabel.TabIndex = 3;
             this.actorLabel.Text = "Actor:";
             // 
             // actorBox
             // 
             this.actorBox.FormattingEnabled = true;
-            this.actorBox.Location = new System.Drawing.Point(73, 91);
+            this.actorBox.Location = new System.Drawing.Point(110, 140);
+            this.actorBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.actorBox.Name = "actorBox";
-            this.actorBox.Size = new System.Drawing.Size(180, 21);
+            this.actorBox.Size = new System.Drawing.Size(268, 28);
             this.actorBox.Sorted = true;
             this.actorBox.TabIndex = 4;
             // 
             // directorBox
             // 
             this.directorBox.FormattingEnabled = true;
-            this.directorBox.Location = new System.Drawing.Point(73, 128);
+            this.directorBox.Location = new System.Drawing.Point(110, 197);
+            this.directorBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.directorBox.Name = "directorBox";
-            this.directorBox.Size = new System.Drawing.Size(180, 21);
+            this.directorBox.Size = new System.Drawing.Size(268, 28);
             this.directorBox.Sorted = true;
             this.directorBox.TabIndex = 5;
             // 
@@ -109,71 +115,80 @@ namespace ScatterFlix
             // 
             this.directorLabel.AutoSize = true;
             this.directorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.directorLabel.Location = new System.Drawing.Point(14, 129);
+            this.directorLabel.Location = new System.Drawing.Point(21, 198);
+            this.directorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.directorLabel.Name = "directorLabel";
-            this.directorLabel.Size = new System.Drawing.Size(53, 15);
+            this.directorLabel.Size = new System.Drawing.Size(78, 22);
             this.directorLabel.TabIndex = 6;
             this.directorLabel.Text = "Director:";
             // 
             // yearBox
             // 
             this.yearBox.FormattingEnabled = true;
-            this.yearBox.Location = new System.Drawing.Point(336, 56);
+            this.yearBox.Location = new System.Drawing.Point(504, 86);
+            this.yearBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.yearBox.Name = "yearBox";
-            this.yearBox.Size = new System.Drawing.Size(83, 21);
+            this.yearBox.Size = new System.Drawing.Size(122, 28);
             this.yearBox.Sorted = true;
             this.yearBox.TabIndex = 7;
+            this.yearBox.Validating += new System.ComponentModel.CancelEventHandler(this.yearBox_Validating);
             // 
             // yearLabel
             // 
             this.yearLabel.AutoSize = true;
             this.yearLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.yearLabel.Location = new System.Drawing.Point(286, 57);
+            this.yearLabel.Location = new System.Drawing.Point(429, 88);
+            this.yearLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.yearLabel.Name = "yearLabel";
-            this.yearLabel.Size = new System.Drawing.Size(35, 15);
+            this.yearLabel.Size = new System.Drawing.Size(53, 22);
             this.yearLabel.TabIndex = 8;
             this.yearLabel.Text = "Year:";
             // 
             // genreBox
             // 
             this.genreBox.FormattingEnabled = true;
-            this.genreBox.Location = new System.Drawing.Point(336, 91);
+            this.genreBox.Location = new System.Drawing.Point(504, 140);
+            this.genreBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.genreBox.Name = "genreBox";
-            this.genreBox.Size = new System.Drawing.Size(83, 21);
+            this.genreBox.Size = new System.Drawing.Size(122, 28);
             this.genreBox.TabIndex = 9;
             // 
             // genreLabel
             // 
             this.genreLabel.AutoSize = true;
             this.genreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.genreLabel.Location = new System.Drawing.Point(286, 93);
+            this.genreLabel.Location = new System.Drawing.Point(429, 143);
+            this.genreLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.genreLabel.Name = "genreLabel";
-            this.genreLabel.Size = new System.Drawing.Size(44, 15);
+            this.genreLabel.Size = new System.Drawing.Size(65, 22);
             this.genreLabel.TabIndex = 10;
             this.genreLabel.Text = "Genre:";
             // 
             // ratingSlider
             // 
-            this.ratingSlider.Location = new System.Drawing.Point(336, 129);
+            this.ratingSlider.Location = new System.Drawing.Point(504, 198);
+            this.ratingSlider.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ratingSlider.Name = "ratingSlider";
-            this.ratingSlider.Size = new System.Drawing.Size(83, 45);
+            this.ratingSlider.Size = new System.Drawing.Size(124, 69);
             this.ratingSlider.TabIndex = 11;
             // 
             // ratingLabel
             // 
             this.ratingLabel.AutoSize = true;
             this.ratingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ratingLabel.Location = new System.Drawing.Point(286, 129);
+            this.ratingLabel.Location = new System.Drawing.Point(429, 198);
+            this.ratingLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ratingLabel.Name = "ratingLabel";
-            this.ratingLabel.Size = new System.Drawing.Size(46, 15);
+            this.ratingLabel.Size = new System.Drawing.Size(67, 22);
             this.ratingLabel.TabIndex = 12;
             this.ratingLabel.Text = "Rating:";
             // 
             // okButton
             // 
-            this.okButton.Location = new System.Drawing.Point(257, 171);
+            this.okButton.Location = new System.Drawing.Point(386, 263);
+            this.okButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.okButton.Name = "okButton";
-            this.okButton.Size = new System.Drawing.Size(75, 23);
+            this.okButton.Size = new System.Drawing.Size(112, 35);
             this.okButton.TabIndex = 13;
             this.okButton.Text = "OK";
             this.okButton.UseVisualStyleBackColor = true;
@@ -181,9 +196,10 @@ namespace ScatterFlix
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(344, 171);
+            this.cancelButton.Location = new System.Drawing.Point(516, 263);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.Size = new System.Drawing.Size(112, 35);
             this.cancelButton.TabIndex = 14;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
@@ -191,10 +207,10 @@ namespace ScatterFlix
             // 
             // Preferences
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(443, 209);
+            this.ClientSize = new System.Drawing.Size(664, 322);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.okButton);
             this.Controls.Add(this.ratingLabel);
@@ -211,6 +227,7 @@ namespace ScatterFlix
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "Preferences";
             this.Text = "Default Preferences";
