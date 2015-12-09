@@ -116,7 +116,7 @@ namespace ScatterFlix
             }
             catch (FormatException e)
             {
-
+                Console.WriteLine(e.StackTrace);
             }
 
             foreach (Movie movie in movies)
@@ -153,8 +153,12 @@ namespace ScatterFlix
         private void mouseClickHandler(object sender, MouseEventArgs e)
         {
             HitTestResult result = movieScatter.HitTest(e.X, e.Y);
-            DataPoint point = movieScatter.Series[0].Points[result.PointIndex];
-            new MovieDetailForm(point.ToolTip).ShowDialog();
+
+            if (result.PointIndex >= 0)
+            {
+                DataPoint point = movieScatter.Series[0].Points[result.PointIndex];
+                new MovieDetailForm(point.ToolTip).ShowDialog();
+            }
         }
     }
 }

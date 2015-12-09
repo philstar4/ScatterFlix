@@ -31,6 +31,7 @@ namespace ScatterFlix
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -40,6 +41,7 @@ namespace ScatterFlix
             this.movieTitle = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.searchButton = new System.Windows.Forms.Button();
             this.movieScatter = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.BasicToolTip = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ratingSlider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.movieScatter)).BeginInit();
             this.SuspendLayout();
@@ -126,6 +128,7 @@ namespace ScatterFlix
             this.cancelButton.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.cancelButton.Size = new System.Drawing.Size(290, 62);
             this.cancelButton.Text = "Reset";
+            this.BasicToolTip.SetToolTip(this.cancelButton, "Clear all fields in Search Criteria");
             this.cancelButton.UseVisualStyleBackColor = false;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
@@ -138,6 +141,7 @@ namespace ScatterFlix
             this.prefsButton.Size = new System.Drawing.Size(290, 62);
             this.prefsButton.TabIndex = 15;
             this.prefsButton.Text = "Default Preferences";
+            this.BasicToolTip.SetToolTip(this.prefsButton, "Enter default \'Search Criteria\' when ScatterFlix is opened");
             this.prefsButton.UseVisualStyleBackColor = false;
             this.prefsButton.Click += new System.EventHandler(this.prefsButton_Click);
             // 
@@ -186,6 +190,7 @@ namespace ScatterFlix
             this.searchButton.Size = new System.Drawing.Size(290, 65);
             this.searchButton.TabIndex = 20;
             this.searchButton.Text = "SEARCH!";
+            this.BasicToolTip.SetToolTip(this.searchButton, "Find movies based on Search Criteria");
             this.searchButton.UseVisualStyleBackColor = false;
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
@@ -194,12 +199,21 @@ namespace ScatterFlix
             chartArea1.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
             chartArea1.AxisX.IsMarginVisible = false;
             chartArea1.AxisX.IsStartedFromZero = false;
-            chartArea1.AxisX.Maximum = 2010D;
+            chartArea1.AxisX.MajorGrid.Enabled = false;
+            chartArea1.AxisX.MajorTickMark.Enabled = false;
+            chartArea1.AxisX.Maximum = 2015D;
             chartArea1.AxisX.Minimum = 1900D;
             chartArea1.AxisX.Title = "Year";
             chartArea1.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea1.AxisX2.LineWidth = 0;
+            chartArea1.AxisY.Interval = 2D;
+            chartArea1.AxisY.IntervalOffset = 1D;
+            chartArea1.AxisY.IsStartedFromZero = false;
+            chartArea1.AxisY.MajorGrid.Enabled = false;
+            chartArea1.AxisY.MajorTickMark.Enabled = false;
+            chartArea1.AxisY.MajorTickMark.TickMarkStyle = System.Windows.Forms.DataVisualization.Charting.TickMarkStyle.None;
             chartArea1.AxisY.Maximum = 10D;
-            chartArea1.AxisY.Minimum = 0D;
+            chartArea1.AxisY.Minimum = -1D;
             chartArea1.AxisY.Title = "Rating";
             chartArea1.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             chartArea1.Name = "ChartArea1";
@@ -272,5 +286,6 @@ namespace ScatterFlix
         private System.Windows.Forms.ColumnHeader movieTitle;
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.DataVisualization.Charting.Chart movieScatter;
+        private ToolTip BasicToolTip;
     }
 }
