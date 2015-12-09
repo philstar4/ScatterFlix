@@ -108,6 +108,7 @@ namespace ScatterFlix
             String genre = genreBox.Text != null ? genreBox.Text : "";
             int rating = ratingSlider.Value;
             bool watchlist = watchListCheckBox.Checked;
+            DataPoint point;
 
             try
             {
@@ -125,11 +126,11 @@ namespace ScatterFlix
                     && movie.isGenre(genre) && movie.meetsRating(rating) && movie.OnWatchList == watchlist)
                 {
                     mainMoviesList.Items.Add(new ListViewItem(movie.Title));
-                    movieScatter.Series[0].Points.Add(new DataPoint(movie.Year, movie.Rating));
+                    point = new DataPoint(movie.Year, movie.Rating);
+                    point.ToolTip = movie.Title;
+                    movieScatter.Series[0].Points.Add(point);
                 }
             }
-
-            
         }
 
         private void prefsButton_Click(object sender, EventArgs e)
@@ -149,10 +150,11 @@ namespace ScatterFlix
             new MovieDetailForm(mainMoviesList.SelectedItems[0].Text).ShowDialog();
         }
 
-        private void chart1_Click(object sender, EventArgs e)
+        private void mouseClickHandler(object sender, MouseEventArgs e)
         {
-            //HitTestResult result = chart1.HitTest(, e.y);
-            //DataPoint point = chart1.Series[0].Points[result.PointIndex];
+            HitTestResult result = movieScatter.HitTest(e.X, e.Y);
+            DataPoint point = movieScatter.Series[0].Points[result.PointIndex];
+            new MovieDetailForm(point.ToolTip).ShowDialog();
         }
     }
 }
