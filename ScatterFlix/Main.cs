@@ -121,7 +121,7 @@ namespace ScatterFlix
                     && movie.isGenre(genre) && movie.meetsRating(rating) && movie.OnWatchList == watchlist)
                 {
                     mainMoviesList.Items.Add(new ListViewItem(movie.Title));
-                    movieScatter.Series[0].Points.Add(new DataPoint(movie.Rating, movie.Year));
+                    movieScatter.Series[0].Points.Add(new DataPoint(movie.Year, movie.Rating));
                 }
             }
 
