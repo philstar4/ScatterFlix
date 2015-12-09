@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using System.Xml.Linq;
 
 namespace ScatterFlix
@@ -38,7 +39,7 @@ namespace ScatterFlix
                     {
                         if (attribute.Name == "title")
                         {
-                            currMovie.addTitle(attribute.Value);
+                            currMovie.Title = attribute.Value;
                         }
                         else if (attribute.Name == "actor")
                         {
@@ -46,11 +47,11 @@ namespace ScatterFlix
                         }
                         else if (attribute.Name == "director")
                         {
-                            currMovie.addDirector(attribute.Value);
+                            currMovie.Director = attribute.Value;
                         }
                         else if (attribute.Name == "year")
                         {
-                            currMovie.addYear(Int32.Parse(attribute.Value));
+                            currMovie.Year = Convert.ToInt32(attribute.Value);
                         }
                         else if (attribute.Name == "genre")
                         {
@@ -58,18 +59,18 @@ namespace ScatterFlix
                         }
                         else if (attribute.Name == "rating")
                         {
-                            currMovie.addRating(Int32.Parse(attribute.Value));
+                            currMovie.Rating = Convert.ToInt32(attribute.Value);
                         }
                         else if (attribute.Name == "watchlist")
                         {
-                            currMovie.setWatched(Convert.ToBoolean(attribute.Value));
+                            currMovie.OnWatchList = Convert.ToBoolean(attribute.Value);
                         }
                     }
                     movies.Add(currMovie);
                 }
             }
 
-            movies.Sort((x, y) => x.getTitle().CompareTo(y.getTitle()));
+            movies.Sort((x, y) => x.Title.CompareTo(y.Title));
         }
 
         private void clearSearchFields()
@@ -117,12 +118,14 @@ namespace ScatterFlix
             {
                 if (movie.containsTitle(title) && movie.hasActor(actor)
                     && movie.hasDirector(director) && movie.isFromYear(year)
-                    && movie.isGenre(genre) && movie.meetsRating(rating) && movie.isOnWatchList(watchlist))
+                    && movie.isGenre(genre) && movie.meetsRating(rating) && movie.OnWatchList == watchlist)
                 {
-                    mainMoviesList.Items.Add(new ListViewItem(movie.getTitle()));
+                    mainMoviesList.Items.Add(new ListViewItem(movie.Title));
+                    movieScatter.Series[0].Points.Add(new DataPoint(movie.Rating, movie.Year));
                 }
             }
-            Console.WriteLine("finished");
+
+            
         }
 
         private void prefsButton_Click(object sender, EventArgs e)
@@ -130,15 +133,22 @@ namespace ScatterFlix
             new Preferences().ShowDialog();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void searchButton_Click(object sender, EventArgs e)
         {
             mainMoviesList.Items.Clear();
+            movieScatter.Series[0].Points.Clear();
             populateMovieList();
         }
 
         private void mainMoviesList_MovieDoubleClicked(object sender, EventArgs e)
         {
             new MovieDetailForm(mainMoviesList.SelectedItems[0].Text).ShowDialog();
+        }
+
+        private void chart1_Click(object sender, EventArgs e)
+        {
+            //HitTestResult result = chart1.HitTest(, e.y);
+            //DataPoint point = chart1.Series[0].Points[result.PointIndex];
         }
     }
 }

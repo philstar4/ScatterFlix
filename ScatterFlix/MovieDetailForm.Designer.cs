@@ -155,6 +155,7 @@
             // 
             // imgMoviePoster
             // 
+            this.imgMoviePoster.ErrorImage = global::ScatterFlix.Properties.Resources.image_not_found;
             this.imgMoviePoster.Location = new System.Drawing.Point(24, 98);
             this.imgMoviePoster.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.imgMoviePoster.Name = "imgMoviePoster";

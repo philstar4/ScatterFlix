@@ -40,6 +40,8 @@ namespace ScatterFlix
         private void loadData(string movieName)
         {
             int count = 0;
+            bool addedSubgenre = false;
+
             moviesXml = new XmlDocument();
             moviesXml.Load(xmlFile);
 
@@ -48,7 +50,7 @@ namespace ScatterFlix
 
             foreach (XmlNode node in movieNodeList)
             {
-                if (node.SelectSingleNode("title").InnerText.Trim() == movieName)
+                if (node.SelectSingleNode("title").InnerText.Trim() == movieName.Trim())
                 {
                     movieNode = node;
 
@@ -59,9 +61,9 @@ namespace ScatterFlix
                     txtRuntime.Text = movieNode.SelectSingleNode("length").InnerText.Trim();
                     tbOverallRating.Value = Convert.ToInt32(movieNode.SelectSingleNode("rating").InnerText.Trim());
                     lblOverallRatingDetail.Text = movieNode.SelectSingleNode("rating").InnerText.Trim() + "/10";
-                    tbYourRating.Value = Convert.ToInt32(movieNode.SelectSingleNode("userrating").InnerText.Trim());
-                    lblYourRatingDetail.Text = movieNode.SelectSingleNode("userrating").InnerText.Trim() + "/10";
-                    btnWatchList.Text = setWatchListButtonText(Convert.ToBoolean(movieNode.SelectSingleNode("watchlist").InnerText.Trim()));
+                    //tbYourRating.Value = Convert.ToInt32(movieNode.SelectSingleNode("userrating").InnerText.Trim());
+                    //lblYourRatingDetail.Text = movieNode.SelectSingleNode("userrating").InnerText.Trim() + "/10";
+                    //btnWatchList.Text = setWatchListButtonText(Convert.ToBoolean(movieNode.SelectSingleNode("watchlist").InnerText.Trim()));
 
                     // Multi node attributes
                     txtSubgenres.Text = "";
@@ -74,13 +76,17 @@ namespace ScatterFlix
                         else
                         {
                             txtSubgenres.Text += genreNode.InnerText.Trim() + ", ";
+                            addedSubgenre = true;
                         }
 
                         count++;
                     }
 
                     // Remove last comma and space at the end of subgenres
-                    txtSubgenres.Text = txtSubgenres.Text.Remove(txtSubgenres.Text.Length - 2);
+                    if (addedSubgenre)
+                    {
+                        txtSubgenres.Text = txtSubgenres.Text.Remove(txtSubgenres.Text.Length - 2);
+                    }
 
                     txtCast.Text = "";
                     foreach (XmlNode castNode in movieNode.SelectNodes("actor"))

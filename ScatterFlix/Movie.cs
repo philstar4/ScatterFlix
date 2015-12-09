@@ -14,7 +14,7 @@ namespace ScatterFlix
         private int year;
         private List<String> genres;
         private int rating;
-        private bool isWatched;
+        private bool onWatchList;
 
         public Movie()
         {
@@ -22,14 +22,10 @@ namespace ScatterFlix
             genres = new List<String>();
         }
 
-        public void addTitle(String title)
+        public String Title
         {
-            this.title = title;
-        }
-
-        public String getTitle()
-        {
-            return title;
+            get { return title; }
+            set { title = value; }
         }
 
         public bool containsTitle(String title)
@@ -52,12 +48,26 @@ namespace ScatterFlix
             {
                 return true;
             }
-            return actors.Contains(actor);
+            else
+            {
+                bool found = false;
+
+                foreach (string currActor in actors)
+                {
+                    if (currActor.Contains(actor))
+                    {
+                        found = true;
+                    }
+                }
+
+                return found;
+            }
         }
 
-        public void addDirector(String director)
+        public String Director
         {
-            this.director = director;
+            get { return director; }
+            set { director = value; }
         }
 
         public bool hasDirector(String director)
@@ -66,12 +76,13 @@ namespace ScatterFlix
             {
                 return true;
             }
-            return this.director == director;
+            return this.director.Contains(director);
         }
 
-        public void addYear(int year)
+        public int Year
         {
-            this.year = year;
+            get { return year; }
+            set { year = value; }
         }
 
         public bool isFromYear(int year)
@@ -97,9 +108,10 @@ namespace ScatterFlix
             return genres.Contains(genre);
         }
 
-        public void addRating(int rating)
+        public int Rating
         {
-            this.rating = rating;
+            get { return rating; }
+            set { rating = value; }
         }
 
         public bool meetsRating(int rating)
@@ -111,14 +123,10 @@ namespace ScatterFlix
             return this.rating >= rating;
         }
 
-        public void setWatched(bool watched)
+        public bool OnWatchList
         {
-            isWatched = watched;
-        }
-
-        public bool isOnWatchList(bool watchlist)
-        {
-            return watchlist == isWatched;
+            get { return onWatchList; }
+            set { onWatchList = value; }
         }
     }
 }

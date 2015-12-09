@@ -130,6 +130,7 @@
     <Content Include="prefs.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="resources\image-not-found.gif" />
     <None Include="resources\prefs.xml" />
   </ItemGroup>
   <ItemGroup>
