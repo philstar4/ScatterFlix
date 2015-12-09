@@ -1,4 +1,7 @@
-﻿namespace ScatterFlix
+﻿using System;
+using System.Windows.Forms;
+
+namespace ScatterFlix
 {
     partial class Main
     {
@@ -183,6 +186,9 @@
             // 
             // movieScatter
             // 
+            chartArea1.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea1.AxisX.IsMarginVisible = false;
+            chartArea1.AxisX.IsStartedFromZero = false;
             chartArea1.AxisX.Maximum = 2010D;
             chartArea1.AxisX.Minimum = 1900D;
             chartArea1.AxisX.Title = "Year";
@@ -192,6 +198,11 @@
             chartArea1.AxisY.Title = "Rating";
             chartArea1.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             chartArea1.Name = "ChartArea1";
+            chartArea1.Position.Auto = false;
+            chartArea1.Position.Height = 94F;
+            chartArea1.Position.Width = 94F;
+            chartArea1.Position.X = 3F;
+            chartArea1.Position.Y = 3F;
             this.movieScatter.ChartAreas.Add(chartArea1);
             legend1.Enabled = false;
             legend1.Name = "Legend1";
@@ -207,7 +218,7 @@
             this.movieScatter.Size = new System.Drawing.Size(662, 529);
             this.movieScatter.TabIndex = 21;
             this.movieScatter.Text = "chart1";
-            this.movieScatter.Click += new System.EventHandler(this.chart1_Click);
+            this.movieScatter.MouseClick += new MouseEventHandler(this.mouseClickHandler);
             // 
             // Main
             // 
