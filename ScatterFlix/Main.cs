@@ -78,9 +78,13 @@ namespace ScatterFlix
             watchListCheckBox.Checked = false;
             titleBox.Clear();
             actorBox.SelectedIndex = -1;
+            actorBox.Text = "";
             directorBox.SelectedIndex = -1;
+            directorBox.Text = "";
             yearBox.SelectedIndex = -1;
+            yearBox.Text = "";
             genreBox.SelectedIndex = -1;
+            genreBox.Text = "";
             ratingSlider.Value = 0;
         }
 
