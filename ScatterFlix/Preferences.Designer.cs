@@ -89,7 +89,6 @@ namespace ScatterFlix
             // 
             // actorBox
             // 
-            this.actorBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.actorBox.FormattingEnabled = true;
             this.actorBox.Location = new System.Drawing.Point(73, 91);
             this.actorBox.Name = "actorBox";
@@ -99,7 +98,6 @@ namespace ScatterFlix
             // 
             // directorBox
             // 
-            this.directorBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.directorBox.FormattingEnabled = true;
             this.directorBox.Location = new System.Drawing.Point(73, 128);
             this.directorBox.Name = "directorBox";
@@ -119,7 +117,6 @@ namespace ScatterFlix
             // 
             // yearBox
             // 
-            this.yearBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.yearBox.FormattingEnabled = true;
             this.yearBox.Location = new System.Drawing.Point(336, 56);
             this.yearBox.Name = "yearBox";
@@ -139,7 +136,6 @@ namespace ScatterFlix
             // 
             // genreBox
             // 
-            this.genreBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.genreBox.FormattingEnabled = true;
             this.genreBox.Location = new System.Drawing.Point(336, 91);
             this.genreBox.Name = "genreBox";

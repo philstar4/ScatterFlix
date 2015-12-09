@@ -119,7 +119,7 @@ namespace ScatterFlix
             this.Close();
         }
 
-        public virtual void okButton_Click(object sender, EventArgs e)
+        public void okButton_Click(object sender, EventArgs e)
         {
             deleteOriginalPreferences();
             addNewPreferences();

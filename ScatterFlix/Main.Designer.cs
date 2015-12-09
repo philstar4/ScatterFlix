@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.prefsButton = new System.Windows.Forms.Button();
+            this.watchListCheckBox = new System.Windows.Forms.CheckBox();
+            this.mainMoviesList = new System.Windows.Forms.ListView();
+            this.movieTitle = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button1 = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
             ((System.ComponentModel.ISupportInitialize)(this.ratingSlider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,10 +44,10 @@
             // 
             // okButton
             // 
-            this.okButton.Location = new System.Drawing.Point(471, 381);
-            this.okButton.Size = new System.Drawing.Size(193, 40);
+            this.okButton.Location = new System.Drawing.Point(670, 513);
+            this.okButton.Size = new System.Drawing.Size(10, 14);
             this.okButton.Text = "Search";
-            this.okButton.Click += new System.EventHandler(this.okButton_Click);
+            this.okButton.Visible = false;
             // 
             // titleLabel
             // 
@@ -101,29 +104,66 @@
             this.cancelButton.Text = "Reset";
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
+            // prefsButton
+            // 
+            this.prefsButton.Location = new System.Drawing.Point(471, 476);
+            this.prefsButton.Name = "prefsButton";
+            this.prefsButton.Size = new System.Drawing.Size(193, 40);
+            this.prefsButton.TabIndex = 15;
+            this.prefsButton.Text = "Default Preferences";
+            this.prefsButton.UseVisualStyleBackColor = true;
+            this.prefsButton.Click += new System.EventHandler(this.prefsButton_Click);
+            // 
+            // watchListCheckBox
+            // 
+            this.watchListCheckBox.AutoSize = true;
+            this.watchListCheckBox.Location = new System.Drawing.Point(188, 370);
+            this.watchListCheckBox.Name = "watchListCheckBox";
+            this.watchListCheckBox.Size = new System.Drawing.Size(77, 17);
+            this.watchListCheckBox.TabIndex = 18;
+            this.watchListCheckBox.Text = "Watch List";
+            this.watchListCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // mainMoviesList
+            // 
+            this.mainMoviesList.Alignment = System.Windows.Forms.ListViewAlignment.Default;
+            this.mainMoviesList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.movieTitle});
+            this.mainMoviesList.FullRowSelect = true;
+            this.mainMoviesList.GridLines = true;
+            this.mainMoviesList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            this.mainMoviesList.Location = new System.Drawing.Point(471, 13);
+            this.mainMoviesList.MultiSelect = false;
+            this.mainMoviesList.Name = "mainMoviesList";
+            this.mainMoviesList.ShowGroups = false;
+            this.mainMoviesList.Size = new System.Drawing.Size(193, 345);
+            this.mainMoviesList.TabIndex = 19;
+            this.mainMoviesList.UseCompatibleStateImageBehavior = false;
+            this.mainMoviesList.View = System.Windows.Forms.View.Details;
+            // 
+            // movieTitle
+            // 
+            this.movieTitle.Text = "";
+            this.movieTitle.Width = 189;
+            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(471, 478);
+            this.button1.Location = new System.Drawing.Point(471, 382);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(193, 40);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Default Preferences";
+            this.button1.Size = new System.Drawing.Size(193, 42);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "Search";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // listView1
-            // 
-            this.listView1.Location = new System.Drawing.Point(471, 13);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(193, 338);
-            this.listView1.TabIndex = 16;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(689, 539);
-            this.Controls.Add(this.listView1);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.mainMoviesList);
+            this.Controls.Add(this.watchListCheckBox);
+            this.Controls.Add(this.prefsButton);
             this.Name = "Main";
             this.Text = "ScatterFlix";
             this.Controls.SetChildIndex(this.label1, 0);
@@ -141,8 +181,10 @@
             this.Controls.SetChildIndex(this.ratingLabel, 0);
             this.Controls.SetChildIndex(this.okButton, 0);
             this.Controls.SetChildIndex(this.cancelButton, 0);
+            this.Controls.SetChildIndex(this.prefsButton, 0);
+            this.Controls.SetChildIndex(this.watchListCheckBox, 0);
+            this.Controls.SetChildIndex(this.mainMoviesList, 0);
             this.Controls.SetChildIndex(this.button1, 0);
-            this.Controls.SetChildIndex(this.listView1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.ratingSlider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -151,7 +193,10 @@
 
         #endregion
 
+        private System.Windows.Forms.Button prefsButton;
+        private System.Windows.Forms.CheckBox watchListCheckBox;
+        private System.Windows.Forms.ListView mainMoviesList;
+        private System.Windows.Forms.ColumnHeader movieTitle;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ListView listView1;
     }
 }

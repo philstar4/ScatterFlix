@@ -72,6 +72,7 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Movie.cs" />
     <Compile Include="Preferences.cs">
       <SubType>Form</SubType>
     </Compile>
