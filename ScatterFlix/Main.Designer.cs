@@ -140,6 +140,7 @@
             this.mainMoviesList.TabIndex = 19;
             this.mainMoviesList.UseCompatibleStateImageBehavior = false;
             this.mainMoviesList.View = System.Windows.Forms.View.Details;
+            this.mainMoviesList.DoubleClick += new System.EventHandler(this.mainMoviesList_MovieDoubleClicked);
             // 
             // movieTitle
             // 

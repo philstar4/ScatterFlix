@@ -135,5 +135,10 @@ namespace ScatterFlix
             mainMoviesList.Items.Clear();
             populateMovieList();
         }
+
+        private void mainMoviesList_MovieDoubleClicked(object sender, EventArgs e)
+        {
+            new MovieDetailForm(mainMoviesList.SelectedItems[0].Text).ShowDialog();
+        }
     }
 }
