@@ -61,9 +61,9 @@ namespace ScatterFlix
                     txtRuntime.Text = movieNode.SelectSingleNode("length").InnerText.Trim();
                     tbOverallRating.Value = Convert.ToInt32(movieNode.SelectSingleNode("rating").InnerText.Trim());
                     lblOverallRatingDetail.Text = movieNode.SelectSingleNode("rating").InnerText.Trim() + "/10";
-                    //tbYourRating.Value = Convert.ToInt32(movieNode.SelectSingleNode("userrating").InnerText.Trim());
-                    //lblYourRatingDetail.Text = movieNode.SelectSingleNode("userrating").InnerText.Trim() + "/10";
-                    //btnWatchList.Text = setWatchListButtonText(Convert.ToBoolean(movieNode.SelectSingleNode("watchlist").InnerText.Trim()));
+                    tbYourRating.Value = Convert.ToInt32(movieNode.SelectSingleNode("userrating").InnerText.Trim());
+                    lblYourRatingDetail.Text = movieNode.SelectSingleNode("userrating").InnerText.Trim() + "/10";
+                    btnWatchList.Text = setWatchListButtonText(Convert.ToBoolean(movieNode.SelectSingleNode("watchlist").InnerText.Trim()));
 
                     // Multi node attributes
                     txtSubgenres.Text = "";

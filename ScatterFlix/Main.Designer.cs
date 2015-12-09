@@ -183,10 +183,14 @@
             // 
             // movieScatter
             // 
-            chartArea1.AxisX.Maximum = 10D;
-            chartArea1.AxisX.Minimum = 0D;
-            chartArea1.AxisY.Maximum = 2010D;
-            chartArea1.AxisY.Minimum = 1900D;
+            chartArea1.AxisX.Maximum = 2010D;
+            chartArea1.AxisX.Minimum = 1900D;
+            chartArea1.AxisX.Title = "Year";
+            chartArea1.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea1.AxisY.Maximum = 10D;
+            chartArea1.AxisY.Minimum = 0D;
+            chartArea1.AxisY.Title = "Rating";
+            chartArea1.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             chartArea1.Name = "ChartArea1";
             this.movieScatter.ChartAreas.Add(chartArea1);
             legend1.Enabled = false;
