@@ -34,7 +34,7 @@ namespace ScatterFlix
             {
                 return true;
             }
-            return this.title.Contains(title);
+            return this.title.ToLower().Contains(title.ToLower());
         }
 
         public void addActor(String actor)
@@ -54,7 +54,7 @@ namespace ScatterFlix
 
                 foreach (string currActor in actors)
                 {
-                    if (currActor.Contains(actor))
+                    if (currActor.ToLower().Contains(actor.ToLower()))
                     {
                         found = true;
                     }
@@ -76,7 +76,7 @@ namespace ScatterFlix
             {
                 return true;
             }
-            return this.director.Contains(director);
+            return this.director.ToLower().Contains(director.ToLower());
         }
 
         public int Year
@@ -105,7 +105,20 @@ namespace ScatterFlix
             {
                 return true;
             }
-            return genres.Contains(genre);
+            else
+            {
+                bool found = false;
+
+                foreach (string currGenre in genres)
+                {
+                    if (currGenre.ToLower().Contains(genre.ToLower()))
+                    {
+                        found = true;
+                    }
+                }
+
+                return found;
+            }
         }
 
         public int Rating
