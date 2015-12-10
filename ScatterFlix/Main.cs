@@ -150,7 +150,7 @@ namespace ScatterFlix
             new MovieDetailForm(mainMoviesList.SelectedItems[0].Text).ShowDialog();
         }
 
-        private void mouseClickHandler(object sender, MouseEventArgs e)
+        private void movieScatter_OnClick(object sender, MouseEventArgs e)
         {
             HitTestResult result = movieScatter.HitTest(e.X, e.Y);
 
@@ -158,6 +158,14 @@ namespace ScatterFlix
             {
                 DataPoint point = movieScatter.Series[0].Points[result.PointIndex];
                 new MovieDetailForm(point.ToolTip).ShowDialog();
+            }
+        }
+
+        private void textBox_OnKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                searchButton.PerformClick();
             }
         }
     }

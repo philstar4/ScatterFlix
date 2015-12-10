@@ -45,6 +45,7 @@ namespace ScatterFlix
             ((System.ComponentModel.ISupportInitialize)(this.ratingSlider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.movieScatter)).BeginInit();
             this.SuspendLayout();
+
             // 
             // label1
             // 
@@ -70,6 +71,7 @@ namespace ScatterFlix
             // 
             this.titleBox.Location = new System.Drawing.Point(110, 629);
             this.titleBox.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.titleBox.KeyDown += new KeyEventHandler(this.textBox_OnKeyDown);
             // 
             // actorLabel
             // 
@@ -80,11 +82,13 @@ namespace ScatterFlix
             // 
             this.actorBox.Location = new System.Drawing.Point(110, 683);
             this.actorBox.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.actorBox.KeyDown += new KeyEventHandler(this.textBox_OnKeyDown);
             // 
             // directorBox
             // 
             this.directorBox.Location = new System.Drawing.Point(110, 740);
             this.directorBox.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.directorBox.KeyDown += new KeyEventHandler(this.textBox_OnKeyDown);
             // 
             // directorLabel
             // 
@@ -95,6 +99,7 @@ namespace ScatterFlix
             // 
             this.yearBox.Location = new System.Drawing.Point(504, 629);
             this.yearBox.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.yearBox.KeyDown += new KeyEventHandler(this.textBox_OnKeyDown);
             // 
             // yearLabel
             // 
@@ -105,6 +110,7 @@ namespace ScatterFlix
             // 
             this.genreBox.Location = new System.Drawing.Point(504, 683);
             this.genreBox.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.genreBox.KeyDown += new KeyEventHandler(this.textBox_OnKeyDown);
             // 
             // genreLabel
             // 
@@ -237,7 +243,7 @@ namespace ScatterFlix
             this.movieScatter.Size = new System.Drawing.Size(662, 529);
             this.movieScatter.TabIndex = 21;
             this.movieScatter.Text = "chart1";
-            this.movieScatter.MouseClick += new System.Windows.Forms.MouseEventHandler(this.mouseClickHandler);
+            this.movieScatter.MouseClick += new System.Windows.Forms.MouseEventHandler(this.movieScatter_OnClick);
             // 
             // Main
             // 
