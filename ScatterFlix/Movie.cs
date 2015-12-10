@@ -6,15 +6,17 @@ using System.Threading.Tasks;
 
 namespace ScatterFlix
 {
-    class Movie
+    public class Movie
     {
         private String title;
         private List<String> actors;
         private String director;
         private int year;
         private List<String> genres;
-        private int rating;
+        private int overallRating;
+        private int userRating;
         private bool onWatchList;
+        private String runtime;
 
         public Movie()
         {
@@ -35,6 +37,12 @@ namespace ScatterFlix
                 return true;
             }
             return this.title.ToLower().Contains(title.ToLower());
+        }
+
+        public List<String> Actors
+        {
+            get { return actors; }
+            set { actors = value; }
         }
 
         public void addActor(String actor)
@@ -94,6 +102,12 @@ namespace ScatterFlix
             return this.year == year;
         }
 
+        public List<String> Genres
+        {
+            get { return genres; }
+            set { genres = value; }
+        }
+
         public void addGenre(String genre)
         {
             genres.Add(genre);
@@ -121,10 +135,10 @@ namespace ScatterFlix
             }
         }
 
-        public int Rating
+        public int OverallRating
         {
-            get { return rating; }
-            set { rating = value; }
+            get { return overallRating; }
+            set { overallRating = value; }
         }
 
         public bool meetsRating(int rating)
@@ -133,13 +147,25 @@ namespace ScatterFlix
             {
                 return true;
             }
-            return this.rating >= rating;
+            return this.overallRating >= rating;
+        }
+
+        public int UserRating
+        {
+            get { return userRating; }
+            set { userRating = value; }
         }
 
         public bool OnWatchList
         {
             get { return onWatchList; }
             set { onWatchList = value; }
+        }
+
+        public String Runtime
+        {
+            get { return runtime; }
+            set { runtime = value; }
         }
     }
 }

@@ -59,11 +59,19 @@ namespace ScatterFlix
                         }
                         else if (attribute.Name == "rating")
                         {
-                            currMovie.Rating = Convert.ToInt32(attribute.Value);
+                            currMovie.OverallRating = Convert.ToInt32(attribute.Value);
                         }
                         else if (attribute.Name == "watchlist")
                         {
                             currMovie.OnWatchList = Convert.ToBoolean(attribute.Value);
+                        }
+                        else if (attribute.Name == "userrating")
+                        {
+                            currMovie.UserRating = Convert.ToInt32(attribute.Value);
+                        }
+                        else if (attribute.Name == "length")
+                        {
+                            currMovie.Runtime = attribute.Value;
                         }
                     }
                     movies.Add(currMovie);
@@ -126,7 +134,7 @@ namespace ScatterFlix
                     && movie.isGenre(genre) && movie.meetsRating(rating) && movie.OnWatchList == watchlist)
                 {
                     mainMoviesList.Items.Add(new ListViewItem(movie.Title));
-                    point = new DataPoint(movie.Year, movie.Rating);
+                    point = new DataPoint(movie.Year, movie.OverallRating);
                     point.ToolTip = movie.Title;
                     movieScatter.Series[0].Points.Add(point);
                 }
@@ -147,7 +155,8 @@ namespace ScatterFlix
 
         private void mainMoviesList_MovieDoubleClicked(object sender, EventArgs e)
         {
-            new MovieDetailForm(mainMoviesList.SelectedItems[0].Text).ShowDialog();
+            Movie selectedMovie = movies.Find(movie => movie.Title.Trim() == mainMoviesList.SelectedItems[0].Text.Trim());
+            new MovieDetailForm(selectedMovie).ShowDialog();
         }
 
         private void movieScatter_OnClick(object sender, MouseEventArgs e)
@@ -157,7 +166,8 @@ namespace ScatterFlix
             if (result.PointIndex >= 0)
             {
                 DataPoint point = movieScatter.Series[0].Points[result.PointIndex];
-                new MovieDetailForm(point.ToolTip).ShowDialog();
+                Movie selectedMovie = movies.Find(movie => movie.Title.Trim() == point.ToolTip.Trim());
+                new MovieDetailForm(selectedMovie).ShowDialog();
             }
         }
 

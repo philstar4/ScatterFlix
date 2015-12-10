@@ -16,22 +16,23 @@ namespace ScatterFlix
 {
     public partial class MovieDetailForm : Form
     {
+        Movie movie;
         string xmlFile = Path.Combine(System.Windows.Forms.Application.StartupPath, "movies.xml");
         XmlDocument moviesXml;
         XmlNode movieNode;
-        string movieName;
 
-        public MovieDetailForm(string movieName)
+        public MovieDetailForm(Movie movie)
         {
-            this.movieName = movieName;
             InitializeComponent();
-            loadData(movieName);
-            loadMoviePoster(movieName);
+            this.movie = movie;
+            loadData();
+            loadMoviePoster();
+            loadXml();
         }
 
-        private void loadMoviePoster(string movieName)
+        private void loadMoviePoster()
         {
-            string movieParam = movieName.Replace(' ', '+');
+            string movieParam = movie.Title.Replace(' ', '+');
             string endpoint = @"http://www.omdbapi.com/";
             var client = new RestClient(endpoint);
             var json = client.MakeRequest("?t=" + movieParam + "&y=&plot=short&r=json");
@@ -39,11 +40,54 @@ namespace ScatterFlix
             imgMoviePoster.ImageLocation = data.Poster;
         }
 
-        private void loadData(string movieName)
+        private void loadData()
         {
             int count = 0;
             bool addedSubgenre = false;
 
+            // Single node attributes
+            lblMovieTitle.Text = movie.Title.Trim();
+            txtDirector.Text = movie.Director.Trim();
+            txtYear.Text = movie.Year.ToString();
+            txtRuntime.Text = movie.Runtime.Trim();
+            tbOverallRating.Value = movie.OverallRating;
+            lblOverallRatingDetail.Text = movie.OverallRating.ToString() + "/10";
+            tbYourRating.Value = movie.UserRating;
+            lblYourRatingDetail.Text = movie.UserRating.ToString() + "/10";
+            btnWatchList.Text = setWatchListButtonText(movie.OnWatchList);
+
+            // Multi node attributes
+            txtSubgenres.Text = "";
+            foreach (String genre in movie.Genres)
+            {
+                if (count == 0)
+                {
+                    txtGenre.Text = genre.Trim();
+                }
+                else
+                {
+                    txtSubgenres.Text += genre.Trim() + ", ";
+                    addedSubgenre = true;
+                }
+
+                count++;
+            }
+
+            // Remove last comma and space at the end of subgenres
+            if (addedSubgenre)
+            {
+                txtSubgenres.Text = txtSubgenres.Text.Remove(txtSubgenres.Text.Length - 2);
+            }
+
+            txtCast.Text = "";
+            foreach (String actor in movie.Actors)
+            {
+                txtCast.Text += actor.Trim() + '\n';
+            }
+        }
+
+        private void loadXml()
+        {
             moviesXml = new XmlDocument();
             moviesXml.Load(xmlFile);
 
@@ -52,49 +96,9 @@ namespace ScatterFlix
 
             foreach (XmlNode node in movieNodeList)
             {
-                if (node.SelectSingleNode("title").InnerText.Trim() == movieName.Trim())
+                if (node.SelectSingleNode("title").InnerText.Trim() == movie.Title.Trim())
                 {
                     movieNode = node;
-
-                    // Single node attributes
-                    lblMovieTitle.Text = movieNode.SelectSingleNode("title").InnerText.Trim();
-                    txtDirector.Text = movieNode.SelectSingleNode("director").InnerText.Trim();
-                    txtYear.Text = movieNode.SelectSingleNode("year").InnerText.Trim();
-                    txtRuntime.Text = movieNode.SelectSingleNode("length").InnerText.Trim();
-                    tbOverallRating.Value = Convert.ToInt32(movieNode.SelectSingleNode("rating").InnerText.Trim());
-                    lblOverallRatingDetail.Text = movieNode.SelectSingleNode("rating").InnerText.Trim() + "/10";
-                    tbYourRating.Value = Convert.ToInt32(movieNode.SelectSingleNode("userrating").InnerText.Trim());
-                    lblYourRatingDetail.Text = movieNode.SelectSingleNode("userrating").InnerText.Trim() + "/10";
-                    btnWatchList.Text = setWatchListButtonText(Convert.ToBoolean(movieNode.SelectSingleNode("watchlist").InnerText.Trim()));
-
-                    // Multi node attributes
-                    txtSubgenres.Text = "";
-                    foreach (XmlNode genreNode in movieNode.SelectNodes("genre"))
-                    {
-                        if (count == 0)
-                        {
-                            txtGenre.Text = genreNode.InnerText.Trim();
-                        }
-                        else
-                        {
-                            txtSubgenres.Text += genreNode.InnerText.Trim() + ", ";
-                            addedSubgenre = true;
-                        }
-
-                        count++;
-                    }
-
-                    // Remove last comma and space at the end of subgenres
-                    if (addedSubgenre)
-                    {
-                        txtSubgenres.Text = txtSubgenres.Text.Remove(txtSubgenres.Text.Length - 2);
-                    }
-
-                    txtCast.Text = "";
-                    foreach (XmlNode castNode in movieNode.SelectNodes("actor"))
-                    {
-                        txtCast.Text += castNode.InnerText.Trim() + '\n';
-                    }
                 }
             }
         }
@@ -115,23 +119,23 @@ namespace ScatterFlix
         {
             lblYourRatingDetail.Text = tbYourRating.Value + "/10";
 
-            movieNode.SelectSingleNode("userrating").InnerText = tbYourRating.Value.ToString();
+            movie.UserRating = tbYourRating.Value;
+            movieNode.SelectSingleNode("userrating").InnerText = movie.UserRating.ToString();
             moviesXml.Save(xmlFile);
         }
 
         private void btnWatchList_Click(object sender, EventArgs e)
         {
-            bool onWatchList = Convert.ToBoolean(movieNode.SelectSingleNode("watchlist").InnerText);
-            onWatchList = !onWatchList;
+            movie.OnWatchList = !movie.OnWatchList;
 
-            btnWatchList.Text = setWatchListButtonText(onWatchList);
-            movieNode.SelectSingleNode("watchlist").InnerText = onWatchList.ToString();
+            btnWatchList.Text = setWatchListButtonText(movie.OnWatchList);
+            movieNode.SelectSingleNode("watchlist").InnerText = movie.OnWatchList.ToString();
             moviesXml.Save(xmlFile);
         }
 
         private void MovieDetailForm_Load(object sender, EventArgs e)
         {
-            this.Text = movieNode.SelectSingleNode("title").InnerText.Trim() + " (" + movieNode.SelectSingleNode("year").InnerText.Trim() + ")";
+            this.Text = movie.Title.Trim() + " (" + movie.Year.ToString() + ")";
         }
     }
 
