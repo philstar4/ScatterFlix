@@ -88,16 +88,16 @@ namespace ScatterFlix
                                 titleBox.Text = attribute.Value.ToString();
                                 break;
                             case "actor":
-                                actorBox.SelectedIndex = actorBox.Items.IndexOf(attribute.Value.ToString());
+                                actorBox.Text = attribute.Value.ToString();
                                 break;
                             case "director":
-                                directorBox.SelectedIndex = directorBox.Items.IndexOf(attribute.Value.ToString());
+                                directorBox.Text = attribute.Value.ToString();
                                 break;
                             case "year":
-                                yearBox.SelectedIndex = yearBox.Items.IndexOf(attribute.Value.ToString());
+                                yearBox.Text = attribute.Value.ToString();
                                 break;
                             case "genre":
-                                genreBox.SelectedIndex = genreBox.Items.IndexOf(attribute.Value.ToString());
+                                genreBox.Text = attribute.Value.ToString();
                                 break;
                             case "rating":
                                 try

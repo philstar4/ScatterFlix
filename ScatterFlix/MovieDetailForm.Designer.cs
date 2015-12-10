@@ -306,7 +306,7 @@
             this.Controls.Add(this.lblMovieTitle);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "MovieDetailForm";
-            this.Text = "MovieDetail";
+            this.Load += new System.EventHandler(this.MovieDetailForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.imgMoviePoster)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbOverallRating)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbYourRating)).EndInit();

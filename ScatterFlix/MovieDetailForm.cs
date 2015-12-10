@@ -19,9 +19,11 @@ namespace ScatterFlix
         string xmlFile = Path.Combine(System.Windows.Forms.Application.StartupPath, "movies.xml");
         XmlDocument moviesXml;
         XmlNode movieNode;
+        string movieName;
 
         public MovieDetailForm(string movieName)
         {
+            this.movieName = movieName;
             InitializeComponent();
             loadData(movieName);
             loadMoviePoster(movieName);
@@ -125,6 +127,11 @@ namespace ScatterFlix
             btnWatchList.Text = setWatchListButtonText(onWatchList);
             movieNode.SelectSingleNode("watchlist").InnerText = onWatchList.ToString();
             moviesXml.Save(xmlFile);
+        }
+
+        private void MovieDetailForm_Load(object sender, EventArgs e)
+        {
+            this.Text = movieNode.SelectSingleNode("title").InnerText.Trim() + " (" + movieNode.SelectSingleNode("year").InnerText.Trim() + ")";
         }
     }
 
